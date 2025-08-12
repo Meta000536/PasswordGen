@@ -1,0 +1,27 @@
+# password_gen.py
+import random
+import string
+
+def generate_password(length, use_letters=True, use_digits=False, use_symbols=False):
+    if length <= 0:
+        raise ValueError("Длина должна быть положительной")
+    characters = ""
+    if use_letters:
+        characters += string.ascii_letters
+    if use_digits:
+        characters += string.digits
+    if use_symbols:
+        characters += string.punctuation
+    if not characters:
+        raise ValueError("Выберите хотя бы один тип символов")
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
+
+try:
+    length = int(input("Введите длину пароля: "))
+    use_letters = input("Включать буквы? (y/n): ").lower() == 'y'
+    use_digits = input("Включать цифры? (y/n): ").lower() == 'y'
+    use_symbols = input("Включать специальные символы? (y/n): ").lower() == 'y'
+    print(f"Ваш пароль: {generate_password(length, use_letters, use_digits, use_symbols)}")
+except ValueError as e:
+    print(f"Ошибка: {e}")
