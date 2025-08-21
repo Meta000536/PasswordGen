@@ -2,7 +2,9 @@
 Simple password generator written in Python.
 
 ## Features
-- Generates passwords with letters, digits, and special characters.
+- Generates passwords with customizable character types (letters, digits, special characters).
+- Checks password strength (Weak/Medium/Strong).
+- Saves generated passwords to passwords.txt.
 - Default password length: 8 characters.
 
 ## Usage
