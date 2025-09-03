@@ -1,2 +1,2 @@
 # requirements.txt
-# No external dependencies required (uses standard library: random, string, re)
+pyperclip>=1.8.2  # Required for copying passwords to clipboard
